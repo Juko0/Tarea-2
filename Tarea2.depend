@@ -1,0 +1,62 @@
+# depslib dependency file v1.0
+1570226346 source:d:\joaco\escritorio\tarea2\map.c
+	"Map.h"
+	<math.h>
+	<string.h>
+	<stdlib.h>
+	<stdint.h>
+	<assert.h>
+
+1570226338 d:\joaco\escritorio\tarea2\map.h
+
+1571172768 source:d:\joaco\escritorio\tarea2\main.c
+	<stdio.h>
+	<conio.h>
+	<stdlib.h>
+	<string.h>
+	"map.h"
+	<ctype.h>
+
+1572119157 source:d:\joaco\escritorio\tarea-2-master\main.c
+	<stdio.h>
+	<conio.h>
+	<stdlib.h>
+	<string.h>
+	"map.h"
+	<ctype.h>
+
+1571429179 d:\joaco\escritorio\tarea-2-master\map.h
+
+1571429179 source:d:\joaco\escritorio\tarea-2-master\map.c
+	"Map.h"
+	<math.h>
+	<string.h>
+	<stdlib.h>
+	<stdint.h>
+	<assert.h>
+
+1571429179 source:d:\joaco\escritorio\nueva carpeta\tarea-2-master\map.c
+	"Map.h"
+	<math.h>
+	<string.h>
+	<stdlib.h>
+	<stdint.h>
+	<assert.h>
+
+1571429179 d:\joaco\escritorio\nueva carpeta\tarea-2-master\map.h
+
+1576219168 source:d:\joaco\escritorio\nueva carpeta\tarea-2-master\list.c
+	"list.h"
+	<stdlib.h>
+	<assert.h>
+
+1576219130 d:\joaco\escritorio\nueva carpeta\tarea-2-master\list.h
+
+1576283595 source:d:\joaco\escritorio\nueva carpeta\tarea-2-master\main.c
+	<stdio.h>
+	<conio.h>
+	<stdlib.h>
+	<string.h>
+	"map.h"
+	<ctype.h>
+

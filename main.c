@@ -1,9 +1,16 @@
+//Tarea 2
+//Paolo Pietrantoni
+//Joaquín De La Peña
+
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "map.h"
 #include <ctype.h>
+
+
+//definicion de funciones
 
 typedef struct cancion cancion;
 const char *get_csv_field (char * tmp, int i);
@@ -28,7 +35,8 @@ int stringEqual(const void * key1, const void * key2) {
     return strcmp(A, B) == 0;
 }
 
-struct cancion{
+//struct cancion
+struct cancion{                 
     char*nombre;
     char *artista;
     char *duracion;
@@ -39,7 +47,7 @@ int main () {
 
     int op;
 
-    Map * canciones = createMap(stringHash, stringEqual);
+    Map * canciones = createMap(stringHash, stringEqual);     //crea mapas a trabajar
     Map * album = createMap(stringHash, stringEqual);
     Map * artist = createMap(stringHash, stringEqual);
 
@@ -72,6 +80,7 @@ int main () {
 
                 char linea[1024];
 
+                //llena los mapas con las canciones
                 while (fgets (linea, 1023, fp) != NULL){
                     char *nombre = get_csv_field(linea, 1);
                     char *artista = get_csv_field(linea, 2);
@@ -79,15 +88,10 @@ int main () {
                     char *album = get_csv_field(linea, 4);
                     cancion *c = crear_cancion (nombre, artista, duracion, album);
                     insertMap(canciones, c->nombre, c);
+                    insertMap(album,c->album,c);
+                    insertMap(artist,c->artista,c);
                 }
-
-                cancion * x = firstMap(canciones);
-
-                while (x != NULL) {
-                    insertMap(album,x->album,x);
-                    insertMap(artist,x->artista,x);
-                    x = nextMap(canciones);
-                }
+                
                 fclose(fp);
             }
         }
@@ -108,6 +112,8 @@ int main () {
                 exit(1);
             }
             else{
+                
+                //copia el archivo original en data, y lo pega en el nuevo archivo
                 while ( (data = fgetc ( fp )) != EOF ) {
                     fputc ( data, f );
                 }
@@ -129,17 +135,20 @@ int main () {
             printf("Escriba su fecha de lanzamiento:\n");
             scanf("%s",fecha);
 
-            x = searchMap(album,albuw);
+            x = searchMap(album,albuw);                       //busca en el mapa album, el album deseado
             char canciow[20];
             char awtista[20];
             char duwacion[20];
 
-            if (x == NULL){
+            if (x == NULL){                                //en caso de no existir el album pregunta los demas datos a agregar
+                
                 printf("Escriba el nombre de la cancion que desea agregar a este album\n");
                 scanf("%s",canciow);
                 s=searchMap(canciones,canciow);
-
-                if(s==NULL){
+                    
+                
+                //verifica que la cancion no exista ya
+                if(s==NULL){                         
                     printf("Escriba el nombre del artista de la cancion que desea agregar a este album\n");
                     scanf("%s",awtista);
                     printf("Escriba la duracion de la cancion que desea agregar a este album\n");

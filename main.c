@@ -96,7 +96,7 @@ int main () {
             }
         }
 
-        if (op==2){
+        if (op==2){    // Se exportan los datos ya previamente leidos a un csv.
 
             FILE*fp;
             fp=fopen("canciones.csv","r");
@@ -122,7 +122,7 @@ int main () {
             }
         }
 
-        if (op==3){
+        if (op==3){                   // En esta opcion se crea un album adicional para lo cual se le pide al usuario que ingrese el nombre de este
 
             char albuw[20];
             char fecha[30];
@@ -187,7 +187,7 @@ int main () {
             }
         }
 
-        if(op==4){
+        if(op==4){                          //Se agrega una cancion al mapa de canciones, en caso de ya existir se le avisa al usuario para que ingrese otro comando.
             char song[20];
             int n;
             cancion * x = firstMap(canciones);
@@ -219,7 +219,7 @@ int main () {
 
         }
 
-        if(op==5){
+        if(op==5){              //Elimina un artista
             char awtista[20];
 
             printf("Escriba el artista que desea eliminar:\n");
@@ -235,7 +235,7 @@ int main () {
             }
         }
 
-        if (op == 6){
+        if (op == 6){                   // Se busca una cancion y se muestra en pantalla.
             cancion * s = firstMap(canciones);
             char sonk [20];
 
@@ -249,7 +249,7 @@ int main () {
 
         }
 
-        if (op == 7){
+        if (op == 7){                              //Se busca un artista y se muestra en pantalla todas sus canciones
             cancion * s = firstMap(canciones);
 
             removeAllMap(artist);
@@ -277,7 +277,7 @@ int main () {
             if (cont<1) printf("no existe este artista \n");
         }
 
-        if (op == 8){
+        if (op == 8){                        // Se muestra en pantalla todas las canciones de un álbum.
            cancion * s = firstMap(canciones);
 
             removeAllMap(album);
